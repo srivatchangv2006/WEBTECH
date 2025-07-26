@@ -1,0 +1,293 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SRIVATCHAN G V — Curriculum Vitae</title>
+    <style>
+        body {
+            background: #ccc;
+            margin: 0;
+            padding: 20px;
+            font-family: Georgia, "Times New Roman", Times, serif;
+        }
+        .a4 {
+            background: white;
+            width: 210mm;
+            min-height: 297mm;
+            margin: auto;
+            padding: 30px 40px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+        h1, h2, h3 {
+            margin: 0;
+        }
+        .name {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .contact {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        .section {
+            margin-top: 25px;
+        }
+        .section-title {
+            font-size: 17px;
+            font-weight: bold;
+            border-bottom: 1px solid #000;
+            margin-bottom: 10px;
+        }
+        .project-title {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .project-subtitle {
+            font-style: italic;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+        p {
+            font-size: 13px;
+            margin: 5px 0;
+        }
+        @media screen and (max-width: 800px) {
+            .a4 {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="a4">
+
+        <div class="name">SRIVATCHAN G V</div>
+        <div class="contact">
+            Chennai, Tamil Nadu, India |
+            9342548083 |
+            <a href="mailto:gvsrivatchan@gmail.com">gvsrivatchan@gmail.com</a> |
+            <a href="https://github.com/srivatchan2006">github.com/srivatchan2006</a> |
+            <a href="https://linkedin.com/in/srivatchangv">linkedin.com/in/srivatchangv</a>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Summary</div>
+            <p>Third-year undergraduate at Shiv Nadar University, specializing in Artificial Intelligence and Data Science with a 9.42 CGPA. Passionate about building full-stack web systems and real-time intelligent applications. Eager to contribute to challenging development environments that combine automation, user-centric design, and machine learning.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Education</div>
+            <p><strong>Shiv Nadar University, Chennai</strong> (2023–2027 Expected)<br>B.Tech in Artificial Intelligence and Data Science<br>CGPA: 9.42 / 10.00 (Till IV Semester)</p>
+            <p><strong>Srimathi Sundaravalli Memorial School</strong> (2013–2023)<br>Class XII: 97.4% | Class X: 94.2%</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Technical Skills</div>
+            <p><strong>Languages:</strong> Python, Java, PHP, C, C++, JavaScript, SQL, HTML, CSS</p>
+            <p><strong>Libraries & Frameworks:</strong> Django REST Framework, React, TypeScript, OpenCV, Mediapipe, Folium, LSTM</p>
+            <p><strong>Tools & Platforms:</strong> Apache Kafka, Azure Blob Storage, MySQL, Git</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Projects</div>
+
+            <div class="project-title">Temporal Analytics for Fleet Telemetry</div>
+            <div class="project-subtitle">May 2025 – June 2025 | Apache Kafka, Azure Blob Storage, Python, Folium, LSTM</div>
+            <p>This project involved designing a robust real-time vehicle telemetry analysis system capable of ingesting, storing, and visualizing high-frequency sensor data. Apache Kafka served as the messaging backbone, continuously collecting data such as speed, fuel consumption, and engine behavior from connected vehicles.</p>
+            <p>I wrote Python-based consumer pipelines to process and clean the data in real time before storing it in Azure Blob Storage for long-term retention and scalable access. A rich dashboard was developed that visualized vehicle routes using Folium — interactive maps showed trip paths with annotations for harsh events like overspeeding or sudden braking.</p>
+            <p>A key innovation was the integration of an LSTM-based model to capture sequential driver behavior patterns. The model detected anomalies and patterns indicative of inefficient or aggressive driving styles. I also explored a reimbursement strategy for inefficient trips, where drivers could be penalized or rewarded based on metrics derived from model predictions.</p>
+
+            <div class="project-title">Gym Membership Management System</div>
+            <div class="project-subtitle">February 2025 – March 2025 | PHP, MySQL, HTML, CSS, JavaScript</div>
+            <p>I developed a full-stack web application to handle gym operations — from member registration and login to plan management and activity tracking. The system provided role-based access where admins could onboard users, define subscription plans, and monitor attendance logs.</p>
+            <p>MySQL served as the backend storage for user credentials, plan history, and login activity. PHP handled the server-side logic for validating inputs, rendering dynamic pages, and triggering plan-related notifications. I incorporated JavaScript for client-side validation and used responsive HTML/CSS to ensure mobile compatibility.</p>
+            <p>A key feature was the implementation of check-in/check-out tracking and email-based reminders for expired plans, helping improve member engagement. The system also focused on data integrity and session management to prevent unauthorized access.</p>
+
+            <div class="project-title">Automated Light System using Motion Detection</div>
+            <div class="project-subtitle">December 2024 – January 2025 | Python, OpenCV, HOG + SVM, Mediapipe</div>
+            <p>This project aimed to develop an intelligent lighting system that activates based on human motion and presence detection in low-light conditions. Using frame differencing and background subtraction techniques via OpenCV, the system identified significant motion in the camera’s field of view.</p>
+            <p>To ensure high accuracy, I implemented a hybrid detection model combining HOG (Histogram of Oriented Gradients) features with a Support Vector Machine (SVM) classifier to detect human figures in real time. Additionally, Mediapipe was used as a secondary validation layer to confirm human presence and reduce false positives.</p>
+            <p>The system was configured to automatically switch lights on when motion was detected and turn them off after a configurable timeout period of inactivity. It was tested in a dark-room lab setting with impressive precision and robustness.</p>
+            
+            <div class="project-title">AI-Powered Student Learning Web App</div>
+            <div class="project-subtitle">VIT Spectrum Hackathon – April 2025 | Django REST Framework, React, TypeScript, Gemini AI API</div>
+            <p>During the 24-hour VIT Spectrum Hackathon, I collaborated with a team to design and prototype a smart learning platform that automates the transformation of educational PDFs into engaging, interactive story-based content. The application used Google’s Gemini AI API to extract textual data from PDFs, reorganize it into coherent narratives, and generate contextual quiz questions to test comprehension.</p>
+            <p>The backend was developed using Django REST Framework and managed endpoints for file upload, AI interaction, and quiz storage. On the frontend, I used React with TypeScript to build an intuitive interface that allowed students to view AI-generated stories and take quizzes seamlessly.</p>
+            <p>This project allowed me to integrate modern AI APIs into a functional educational system and improve full-stack coordination. It also gave me hands-on experience with prompt engineering, RESTful architecture, and frontend UX practices under intense time constraints.</p>
+
+        </div>
+
+        <div class="section">
+            <div class="section-title">Positions of Responsibility</div>
+            <p><strong>Photography Club – Shiv Nadar University</strong> (Core Committee Member, 2023–Present): Coordinated photowalks, exhibitions, and event coverage.</p>
+            <p><strong>Drama Club – Shiv Nadar University</strong> (Core Committee Member, 2023–Present): Involved in scriptwriting, production, and stage performance activities.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Extracurricular Activities</div>
+            <p><strong>Music:</strong> Vocalist and keyboard player with live performance experience.</p>
+            <p><strong>Sports:</strong> Active participant in football and cricket events.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Languages Known</div>
+            <p>English | Fluent | Tamil | Native | Hindi | Intermediate</p>
+        </div>
+
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Srivatchan G V - Curriculum Vitae</title>
+  <style>
+    body {
+      background: #ccc;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      margin: 0;
+      padding: 20px;
+    }
+    .a4 {
+      background-color: white;
+      width: 210mm;
+      min-height: 297mm;
+      margin: auto;
+      padding: 30px 40px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    }
+    .name {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .contact {
+      text-align: center;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      border-bottom: 1px solid black;
+    }
+    p {
+      font-size: 13px;
+      margin: 5px 0;
+      text-align: justify;
+    }
+    .project-title {
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    .project-subtitle {
+      font-style: italic;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+    a {
+      color: black;
+      text-decoration: none;
+    }
+    @media print {
+      body {
+        background: white;
+      }
+      .a4 {
+        box-shadow: none;
+      }
+    }
+    @media screen and (max-width: 800px) {
+      .a4 {
+        width: 95%;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="a4">
+    <div class="name">Srivatchan G V</div>
+    <div class="contact">
+      Chennai, Tamil Nadu, India | +91-93425-48083 |
+      <a href="mailto:gvsrivatchan@gmail.com">gvsrivatchan@gmail.com</a> |
+      <a href="https://github.com/srivatchan2006">github.com/srivatchan2006</a> |
+      <a href="https://linkedin.com/in/srivatchangv">linkedin.com/in/srivatchangv</a>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Professional Summary</div>
+      <p>Third-year undergraduate at Shiv Nadar University, specializing in Artificial Intelligence and Data Science with a 9.42 CGPA. Passionate about building full-stack web systems and real-time intelligent applications. Eager to contribute to challenging development environments that combine automation, user-centric design, and machine learning.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Education</div>
+      <p><strong>Shiv Nadar University, Chennai</strong> (2023 – 2027 Expected)<br>B.Tech in Artificial Intelligence and Data Science<br>CGPA: 9.42 / 10.00 (Till IV Semester)</p>
+      <p><strong>Srimathi Sundaravalli Memorial School</strong> (2013 – 2023)<br>CBSE Curriculum<br>Class XII: 97.4% &nbsp;&nbsp;&nbsp;&nbsp; Class X: 94.2%</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Technical Skills</div>
+      <p><strong>Languages:</strong> Python, Java, PHP, C, C++, JavaScript, SQL, HTML, CSS</p>
+      <p><strong>Libraries & Frameworks:</strong> Django REST Framework, React, TypeScript, OpenCV, Mediapipe, Folium, LSTM</p>
+      <p><strong>Tools & Platforms:</strong> Apache Kafka, Azure Blob Storage, MySQL, Git</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Projects</div>
+
+      <div class="project-title">Temporal Analytics for Fleet Telemetry</div>
+      <div class="project-subtitle">May 2025 – June 2025 | Apache Kafka, Azure Blob Storage, Python, Folium, LSTM</div>
+      <p>This project involved designing a robust real-time vehicle telemetry analysis system capable of ingesting, storing, and visualizing high-frequency sensor data. Apache Kafka served as the messaging backbone, continuously collecting data such as speed, fuel consumption, and engine behavior from connected vehicles.</p>
+      <p>I wrote Python-based consumer pipelines to process and clean the data in real time before storing it in Azure Blob Storage for long-term retention and scalable access. A rich dashboard was developed that visualized vehicle routes using Folium — interactive maps showed trip paths with annotations for harsh events like overspeeding or sudden braking.</p>
+      <p>A key innovation was the integration of an LSTM-based model to capture sequential driver behavior patterns. The model detected anomalies and patterns indicative of inefficient or aggressive driving styles. I also explored a reimbursement strategy for inefficient trips, where drivers could be penalized or rewarded based on metrics derived from model predictions.</p>
+
+      <div class="project-title">Gym Membership Management System</div>
+      <div class="project-subtitle">February 2025 – March 2025 | PHP, MySQL, HTML, CSS, JavaScript</div>
+      <p>I developed a full-stack web application to handle gym operations — from member registration and login to plan management and activity tracking. The system provided role-based access where admins could onboard users, define subscription plans, and monitor attendance logs.</p>
+      <p>MySQL served as the backend storage for user credentials, plan history, and login activity. PHP handled the server-side logic for validating inputs, rendering dynamic pages, and triggering plan-related notifications. I incorporated JavaScript for client-side validation and used responsive HTML/CSS to ensure mobile compatibility.</p>
+      <p>A key feature was the implementation of check-in/check-out tracking and email-based reminders for expired plans, helping improve member engagement. The system also focused on data integrity and session management to prevent unauthorized access.</p>
+
+      <div class="project-title">Automated Light System using Motion Detection</div>
+      <div class="project-subtitle">December 2024 – January 2025 | Python, OpenCV, HOG + SVM, Mediapipe</div>
+      <p>This project aimed to develop an intelligent lighting system that activates based on human motion and presence detection in low-light conditions. Using frame differencing and background subtraction techniques via OpenCV, the system identified significant motion in the camera’s field of view.</p>
+      <p>To ensure high accuracy, I implemented a hybrid detection model combining HOG (Histogram of Oriented Gradients) features with a Support Vector Machine (SVM) classifier to detect human figures in real time. Additionally, Mediapipe was used as a secondary validation layer to confirm human presence and reduce false positives (e.g., animals, moving curtains).</p>
+      <p>The system was configured to automatically switch lights on when motion was detected and turn them off after a configurable timeout period of inactivity. It was tested in a dark-room lab setting with impressive precision and robustness.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Hackathon Projects</div>
+      <div class="project-title">AI-Powered Student Learning Web App</div>
+      <div class="project-subtitle">VIT Spectrum Hackathon – April 2025 | Django REST, React, TypeScript, Gemini AI</div>
+      <p>Collaborated in a 24-hour hackathon to build a smart educational platform that converts academic PDFs into engaging, interactive story-based content using Google’s Gemini AI. Engineered the backend with Django REST Framework to handle file uploads, AI interactions, and quiz storage. On the frontend, used React and TypeScript to create a seamless interface where students could read AI-generated narratives and take contextual quizzes. Gained hands-on experience in prompt engineering, RESTful design, and rapid full-stack prototyping under time constraints.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Positions of Responsibility</div>
+      <p><strong>Photography Club:</strong> Core Committee Member, Shiv Nadar University (2023–Present)<br>Coordinated photowalks, exhibitions, and covered campus events.</p>
+      <p><strong>Drama Club:</strong> Core Committee Member, Shiv Nadar University (2023–Present)<br>Participated in scriptwriting, production, and stage performance.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Extracurricular Activities</div>
+      <p><strong>Music:</strong> Vocalist and keyboard player with stage experience.</p>
+      <p><strong>Sports:</strong> Active football and cricket player.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Languages Known</div>
+      <p>English – Fluent &nbsp;|&nbsp; Tamil – Native &nbsp;|&nbsp; Hindi – Intermediate</p>
+    </div>
+  </div>
+</body>
+</html>
