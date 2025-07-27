@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srivatchan G V - AI & Data Science Student</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b1b 50%, #1a1a1a 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(220, 38, 38, 0.2);
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(220, 38, 38, 0.3);
+        }
+
+        nav.scrolled {
+            background: rgba(26, 26, 26, 0.98);
+            padding: 0.5rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #e0e0e0;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav ul li a:hover {
+            color: #dc2626;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, #dc2626, #b91c1c);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(220, 38, 38, 0.1) 50%, transparent 70%),
+                linear-gradient(-45deg, transparent 30%, rgba(185, 28, 28, 0.05) 50%, transparent 70%);
+            animation: codeMatrix 8s ease-in-out infinite;
+        }
+
+        @keyframes codeMatrix {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: translateY(-10px) rotate(1deg);
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #dc2626);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .profile-photo {
+    width: 320px;
+    height: 370px;
+    border-radius: 20px;
+    object-fit: cover;
+    background-color: #f8f9fa; /* Light background around the photo */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.profile-photo:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section-odd {
+            background: rgba(26, 26, 26, 0.95);
+        }
+
+        .section-even {
+            background: rgba(35, 35, 35, 0.95);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #e0e0e0;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #dc2626, #b91c1c);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #dc2626, #b91c1c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+            transition: transform 0.3s ease;
+            border: 3px solid rgba(220, 38, 38, 0.2);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.4);
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #dc2626;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            color: #b0b0b0;
+        }
+
+        /* Education Section */
+        .education-item {
+            background: rgba(45, 45, 45, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(220, 38, 38, 0.2);
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.2);
+            border-color: rgba(220, 38, 38, 0.4);
+        }
+
+        .education-item h3 {
+            color: #dc2626;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .period {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-item p {
+            color: #b0b0b0;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: rgba(45, 45, 45, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(220, 38, 38, 0.2);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: rgba(220, 38, 38, 0.4);
+        }
+
+        .skill-category h3 {
+            color: #dc2626;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(45deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(220, 38, 38, 0.3);
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2px 10px rgba(220, 38, 38, 0.4);
+            border-color: rgba(220, 38, 38, 0.6);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(45, 45, 45, 0.9);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(220, 38, 38, 0.2);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.2);
+            border-color: rgba(220, 38, 38, 0.4);
+        }
+
+        .project-header {
+            background: linear-gradient(45deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .project-header h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-period {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: rgba(220, 38, 38, 0.1);
+            color: #dc2626;
+            padding: 0.2rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(220, 38, 38, 0.3);
+        }
+
+        .project-features {
+            list-style: none;
+        }
+
+        .project-features li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+            color: #b0b0b0;
+        }
+
+        .project-features li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #dc2626;
+        }
+
+        /* Hackathon Section */
+        .hackathon-placeholder {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(45, 45, 45, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+        }
+
+        .hackathon-placeholder h3 {
+            color: #dc2626;
+            margin-bottom: 1rem;
+        }
+
+        .hackathon-placeholder p {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-item {
+            background: rgba(45, 45, 45, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(220, 38, 38, 0.2);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(220, 38, 38, 0.4);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #dc2626;
+        }
+
+        .contact-item h3 {
+            color: #e0e0e0;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: #dc2626;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #b91c1c;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #b0b0b0;
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(220, 38, 38, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+                padding: 0 1rem;
+                height: 4rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+                padding: 0 1rem;
+                height: 1.8rem;
+            }
+
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+
+            nav {
+                padding: 0.5rem 0;
+            }
+
+            nav ul {
+                flex-direction: row;
+                gap: 0.3rem;
+                justify-content: center;
+                flex-wrap: wrap;
+                padding: 0 1rem;
+            }
+
+            nav ul li {
+                margin: 0.2rem 0.5rem;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+                padding: 0.3rem 0;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .profile-img {
+                width: 200px;
+                height: 200px;
+                font-size: 3rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .skill-category,
+            .education-item,
+            .project-card,
+            .contact-item,
+            .hackathon-placeholder {
+                margin: 0 10px;
+            }
+
+            .cta-section {
+                height: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+                height: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                height: 1.5rem;
+            }
+
+            .profile-photo {
+                width: 100px;
+                height: 100px;
+            }
+
+            nav ul li a {
+                font-size: 0.8rem;
+            }
+
+            .profile-img {
+                width: 150px;
+                height: 150px;
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .project-card,
+            .skill-category,
+            .education-item,
+            .contact-item {
+                margin: 0 5px;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#hackathons">Hackathons</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="cta-section">
+                <img src="23110183.JPG" class="profile-photo" alt="Srivatchan G V">
+            </div>
+            <h1 class="hero-title">Srivatchan G V</h1>
+            <div class="hero-subtitle">
+                <span id="typing-text">AI & Data Science Student | Real-Time Systems Enthusiast | Web Developer</span>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-odd">
+        <div class="container">
+            <h2 class="section-title fade-in">About Me</h2>
+            <div class="about-content fade-in">
+                <div class="about-image">
+                    <div class="profile-img">SG</div>
+                </div>
+                <div class="about-text">
+                    <h3>Passionate Developer & AI Enthusiast</h3>
+                    <p>I am SRIVATCHAN G V, a third-year Artificial Intelligence and Data Science student at Shiv Nadar University. I am passionate about building web applications and exploring machine learning technologies.</p>
+                    <p>With a strong academic record (CGPA: 9.42/10.0) and hands-on experience in various technologies, I am eager to grow with innovative companies and align my skills and passion with their goals and projects.</p>
+                    <p>My expertise spans from web development and data analytics to machine learning, with a particular interest in real-time systems and AI applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section-even">
+        <div class="container">
+            <h2 class="section-title fade-in">Education</h2>
+            <div class="fade-in">
+                <div class="education-item">
+                    <h3>B.Tech in Artificial Intelligence and Data Science</h3>
+                    <div class="period">2023 – 2027 (Expected)</div>
+                    <p><strong>Shiv Nadar University, Chennai</strong></p>
+                    <p>CGPA: <strong>9.42 / 10.0</strong> (till IV semester)</p>
+                </div>
+                <div class="education-item">
+                    <h3>Higher Secondary Education</h3>
+                    <div class="period">2013 – 2023</div>
+                    <p><strong>Srimathi Sundaravalli Memorial School</strong></p>
+                    <p>Class XII: <strong>97.4%</strong> | Class X: <strong>94.2%</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-odd">
+        <div class="container">
+            <h2 class="section-title fade-in">Technical Skills</h2>
+            <div class="skills-grid fade-in">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Web Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">MySQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Libraries & Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">Mediapipe</span>
+                        <span class="skill-tag">Folium</span>
+                        <span class="skill-tag">LSTM</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">Apache Kafka</span>
+                        <span class="skill-tag">MySQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-even">
+        <div class="container">
+            <h2 class="section-title fade-in">Technical Projects</h2>
+            <div class="projects-grid fade-in">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Temporal Analytics for Fleet Telemetry</h3>
+                        <div class="project-period">May 2025 – June 2025</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tech">
+                            <span class="tech-tag">Apache Kafka</span>
+                            <span class="tech-tag">Azure Blob Storage</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">LSTM</span>
+                        </div>
+                        <ul class="project-features">
+                            <li>Real-time ingestion of vehicle telematics data using Apache Kafka and Python pipelines</li>
+                            <li>Uploaded data to Azure Blob for scalable, secure cloud storage</li>
+                            <li>Built a dashboard to visualize vehicle metrics like fuel usage, speed, and efficiency</li>
+                            <li>Implemented trip analysis using Folium to render interactive maps tracking journeys</li>
+                            <li>Applied LSTM-based ML model to identify harsh driving events</li>
+                            <li>Explored reimbursement mechanism for inefficient driving analysis</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Gym Membership Management Website</h3>
+                        <div class="project-period">Feb 2025 – Mar 2025</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tech">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <ul class="project-features">
+                            <li>Built a fully functional web portal with secure member registration and login</li>
+                            <li>Designed admin panel for onboarding users and managing plans</li>
+                            <li>Implemented email-based support for plan-related communication</li>
+                            <li>Focused on responsive UI ensuring usability across devices</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Automated Light System using Motion Detection</h3>
+                        <div class="project-period">Dec 2024 – Jan 2025</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">HOG+SVM</span>
+                            <span class="tech-tag">Mediapipe</span>
+                        </div>
+                        <ul class="project-features">
+                            <li>Designed cost-effective smart lighting solution triggered by motion detection</li>
+                            <li>Leveraged OpenCV and Mediapipe for accurate detection in diverse lighting conditions</li>
+                            <li>Reduced energy consumption with intelligent lighting automation</li>
+                            <li>Deployed successfully in dark-room test setup with high precision</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hackathons Section -->
+    <section id="hackathons" class="section-odd">
+        <div class="container">
+            <h2 class="section-title fade-in">Hackathons & Competitions</h2>
+            <div class="projects-grid fade-in">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>AI-Powered Student Learning Web App</h3>
+                        <div class="project-period">VIT Spectrum Hackathon – April 2025</div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tech">
+                            <span class="tech-tag">Django REST</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Gemini AI</span>
+                        </div>
+                        <ul class="project-features">
+                            <li>Collaborated in a 24-hour hackathon to build a smart educational platform</li>
+                            <li>Converts academic PDFs into engaging, interactive story-based content using Google's Gemini AI</li>
+                            <li>Engineered the backend with Django REST Framework for file uploads and AI interactions</li>
+                            <li>Built React and TypeScript frontend with seamless user interface</li>
+                            <li>Implemented contextual quiz generation from AI-generated narratives</li>
+                            <li>Gained experience in prompt engineering and rapid full-stack prototyping</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-even">
+        <div class="container">
+            <h2 class="section-title fade-in">Get In Touch</h2>
+            <div class="contact-content fade-in">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:gvsrivatchan@gmail.com">gvsrivatchan@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h3>Phone</h3>
+                    <a href="tel:+919342548083">+91 93425 48083</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/srivatchangv" target="_blank">linkedin.com/in/srivatchangv</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💻</div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/srivatchangv2006" target="_blank">github.com/srivatchangv2006</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Srivatchan G V. All rights reserved. | Chennai, Tamil Nadu, India</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Dynamic typing effect for hero section (optional enhancement)
+        const roles = ['AI & Data Science Student', 'Real-Time Systems Enthusiast', 'Web Developer'];
+        let currentRole = 0;
+        let currentChar = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            const typingElement = document.getElementById('typing-text');
+            if (!typingElement) return;
+            
+            const currentText = roles[currentRole];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, currentChar - 1);
+                currentChar--;
+            } else {
+                typingElement.textContent = currentText.substring(0, currentChar + 1);
+                currentChar++;
+            }
+
+            let typeSpeed = isDeleting ? 30 : 80;
+
+            if (!isDeleting && currentChar === currentText.length) {
+                typeSpeed = 2000; // Pause at end
+                isDeleting = true;
+            } else if (isDeleting && currentChar === 0) {
+                isDeleting = false;
+                currentRole = (currentRole + 1) % roles.length;
+                typeSpeed = 300; // Shorter pause before starting new word
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+
+        // Start typing effect after page load
+        window.addEventListener('load', () => {
+            // Typing effect removed - subtitle is now static
+        });
+    </script>
+</body>
+</html>
