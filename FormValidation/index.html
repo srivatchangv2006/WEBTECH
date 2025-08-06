@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Registration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2> Event Registration</h2>
+    <form id="registrationForm" novalidate>
+      <label for="name">Full Name*</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Email*</label>
+      <input type="email" id="email" required />
+
+      <label for="phone">Phone Number*</label>
+      <input type="text" id="phone" required />
+
+      <label for="age">Age*</label>
+      <input type="number" id="age" required />
+
+      <label for="gender">Gender*</label>
+      <select id="gender" required>
+        <option value="">Select</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+
+      <label>Event Type*</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="eventType" value="Workshop" /> Workshop</label>
+        <label><input type="checkbox" name="eventType" value="Seminar" /> Seminar</label>
+        <label><input type="checkbox" name="eventType" value="Networking" /> Networking</label>
+      </div>
+
+      <label for="comments">Comments</label>
+      <textarea id="comments" maxlength="250"></textarea>
+
+      <div id="errors"></div>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
